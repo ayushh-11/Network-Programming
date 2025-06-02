@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Lab7 {
     public static void main(String[] args) throws Exception {
-        // Change this to the interface name (e.g. "eth0") or MAC address (e.g. "00:1A:2B:3C:4D:5E")
-        String input = "wireless_32768";  // or MAC address in uppercase colon-separated format
+        
+        String input = "wireless_32768"; 
 
         for (NetworkInterface ni : Collections.list(NetworkInterface.getNetworkInterfaces())) {
             String mac = formatMAC(ni.getHardwareAddress());
