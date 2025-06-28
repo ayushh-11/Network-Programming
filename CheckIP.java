@@ -18,19 +18,10 @@ public class CheckIP {
         checkIPType(ipv6Address);
     }
 
-    public static void checkIPType(String ip) {
-        try {
-            InetAddress address = InetAddress.getByName(ip);
-
-            if (address instanceof Inet4Address) {
-                System.out.println(ip + " is a valid IPv4 address.");
-            } else if (address instanceof Inet6Address) {
-                System.out.println(ip + " is a valid IPv6 address.");
-            } else {
-                System.out.println(ip + " is an unknown type of IP address.");
-            }
-        } catch (UnknownHostException e) {
-            System.out.println(ip + " is an invalid IP address.");
-        }
+    public static void checkIPType(InetAddress ia) {
+        byte[] address = ia.getAddress();
+        if (address.length == 4) System.out.println("Ip v4 address);       // IPv4
+        else if (address.length == 16) System.out.println("Ip v6 address) // IPv6
+        else return -1;                          // Unknown
     }
 }
